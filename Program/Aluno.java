@@ -2,40 +2,38 @@ package Program;
 
 public class Aluno {
 	public String Nome;
-	public double N[] = new double[1];
-
+	double N;
+	
+	public Aluno(String Nome, double N) {
+		this.Nome = Nome;
+		this.N = N;
+	}
+	public double getNota() {
+		return N;
+	}
+	public void setNota(int id, double N) {
+		this.N = N;
+	}
+	public String getNome() {
+		return Nome;
+	}
+	public void setNome(int id) {
+		this.Nome = Nome;
+	}
+	
 	public String toString() {
 		String out = "";
-		out += "Nome(" + Nome + ") ";
-		out += "Nota(" + N + ") ";
+		out = "(Nome: "+ Nome +", N: "+ N +")";
 		return out;
 	}
-}
 
-public class Vetor{
-	
-	Aluno aluno[] = new Aluno[3];
-	
-	aluno[0] = new Aluno("Eugeo", 8.5);
-	aluno[1] = new Aluno("Ishtar", 4);
-	aluno[2] = new Aluno("Sariel", 7);
-	 	
-	for (int i = 0; i < aluno.length; i++) {
-		System.out.println(aluno[i]);
-	}
-	
-	public Aluno(String Nome, double N1) {
-		this.Nome = Nome;
-		this.N[0] = N1;
-	}
-	
-	public void setNota(int id, double N) {
+public class Vetor {
+	public void getNota(int id, double N) {
 		if ((id < 1) || (id > this.N.length)) return;
-		this.N[id] = N;
+		this.N = N;
 	}
-	
 	public double getNota(int id) {
 		if ((id < 1) || (id > N.length)) return 0;
-		return N[id];
+		return N;
 	}
 }
